@@ -1,0 +1,244 @@
+@import "bootstrap/bootstrap.less";
+@import "font-awesome/font-awesome.less";
+
+// Google fonts
+@import url(http://fonts.googleapis.com/css?family=Lobster+Two:700,400);
+
+// pygments
+@import "pygment/colorful.less";
+
+// use red instead of the default blue for everything
+@brand-primary: #e52533;
+
+/* sticky footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #fff;
+}
+.footer div {
+	text-align: center;
+}
+/* /sticky footer */
+
+html {
+	font-size: 62.5%;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.title-block {
+	text-align: center;
+
+	h1, h2, h3 {
+		font-family: 'Lobster Two', cursive;
+	}
+
+	h1 {
+		font-size: 6.2rem;
+		margin-bottom: 0;
+		a {
+			color: black;
+			&:hover {
+				text-decoration: none;
+				color: @brand-primary;
+			}
+		}
+	}
+	h2 {
+		font-size: 4.8rem;
+		margin-top: 0;
+	}
+
+	margin-bottom: 7.5rem;
+}
+
+article {
+	h1 {
+		margin-top: 0;
+		font-family: 'Lobster Two', cursive;
+		font-size: 4.8rem;
+
+		a {
+			color: black;
+			&:hover {
+				color: @brand-primary;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.post-body {
+		border-bottom: 1px solid black;
+		padding-bottom: 2.5rem;
+		margin-bottom: 2.5rem;
+		.clearfix();
+	}
+
+	p {
+		font-size: 1.5rem;
+	}
+
+	.btn {
+		.pull-right();
+		background: black;
+		color: white;
+
+		&:hover {
+			background: @brand-primary;
+			color: white;
+		}
+	}
+
+	figure {
+		max-width: 100%;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+
+
+	table.highlighttable {
+		table-layout: fixed;
+		white-space: nowrap;
+		width: 100%;
+	}
+
+	.linenos {
+		width: 5rem;
+		text-align: right;
+		margin: 0;
+		padding: 0;
+		vertical-align: top;
+	}
+	       
+	.highlight{
+		width: 100%;
+		height: auto;
+		overflow: auto;
+	}
+
+	.linenodiv {
+		margin: 0 0.9rem 0 0;
+		padding: 0;
+	}
+
+	pre {
+		overflow: auto;
+		word-wrap: normal;
+		white-space: pre;
+	}
+}
+
+aside.post-info {
+	font-family: 'Lobster Two', cursive;
+	text-align: right;
+
+	ul {
+		list-style: none;
+	}
+
+	.hidden-xs {
+		ul {
+			display: inline;
+			list-style: none;
+			padding-left: 0;
+			li {
+				display: inline-block;
+				padding: 0;
+				padding-left: 0.5rem;
+			}
+		}
+	}
+}
+
+aside.sidebar {
+	h1 {
+		font-family: 'Lobster Two', cursive;
+		font-size: 2.8rem;
+		margin-bottom: 0.5rem;
+		border-bottom: 1px solid black;
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 0.5rem;
+
+		li:before {
+			content: "- ";
+		}
+	}
+
+	ul.tag-cloud {
+		li {
+			display: inline;
+			&:before {
+				content: "";
+			}
+		}
+
+		.tag-1 {
+			font-size: 1.5rem;
+			font-weight: 800;
+		}
+
+		.tag-2 {
+			font-size: 1.35rem;
+			font-weight: 600;
+		}
+
+		.tag-3 {
+			font-size: 1.2rem;
+			font-weight: 400;
+		}
+
+		.tag-4 {
+			font-size: 1.05rem;
+			font-weight: 200;
+		}
+	}
+}
+
+.pagination {
+	li {
+		a {
+			color: #000;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+}
+
+.archives {
+	h1 {
+		font-family: 'Lobster Two', cursive;
+		font-size: 3.2rem;
+		text-align: center;
+		text-decoration: underline;
+	}
+}
+
+.comments {
+	h1 {
+		font-family: 'Lobster Two', cursive;
+		font-size: 3.2rem;
+	}
+}

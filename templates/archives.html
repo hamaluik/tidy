@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-9 col-sm-offset-3 archives">
+			{% for year, date_year in dates|groupby( 'date.year' )|sort(reverse=True) %}
+				<h1>{{ year }}</h1>
+				<dl class="dl-horizontal">
+				{% for month, articles in date_year|groupby('date.month') %}
+					{% for article in articles %}
+					<dt>{{ article.date.strftime('%b %d') }}</dt>
+					<dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+					{% endfor %}
+				{% endfor %}
+				</dl>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
+{% set pagetitle = 'Archives' %}

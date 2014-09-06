@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+	<div class="row">
+		<div class="col-sm-9 col-sm-offset-3">
+			<h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<aside class="post-info">
+				<ul>
+					<li>{{ article.locale_date }}</li>
+					{% if article.category %}<li>Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a></li> {% endif %}
+					{% if article.tags|count > 0 %}<li class="hidden-xs">Tags:
+						<ul>
+							{% for tag in article.tags %}<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>{% endfor %}
+						</ul>
+					</li>{% endif %}
+				</ul>
+			</aside>
+		</div>
+		<div class="col-sm-9 post-body">
+			{{ article.content }}
+		</div>
+	</div>
+</article>
+
+{% if DISQUS_SITENAME %}
+<div class="row">
+	<div class="col-sm-9 col-sm-offset-3 comments">
+		<h1>Comments</h1>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			var disqus_shortname = '{{ DISQUS_SITENAME }}';
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+{% endif %}
+{% endblock %}
